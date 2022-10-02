@@ -13,6 +13,8 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
         integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
 
 </head>
 
@@ -20,8 +22,14 @@
 
     <div id="map"></div>
 
+    <button onclick="mapMe()">Map Me</button>
+
+
+    <button id="wallet" onclick="connectWallet()">Connect wallet</button>
+
 
 </body>
+<script src="wallet.js"></script>
 <script src="index.js"></script>
 
 </html>

@@ -12,11 +12,11 @@ var positron = L.tileLayer(
 
 map.setView([0, 0], 0);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution:
-    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
+// L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//   maxZoom: 19,
+//   attribution:
+//     '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+// }).addTo(map);
 
 const options = {
   enableHighAccuracy: true,
@@ -41,6 +41,13 @@ function error(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+console.log(signer);
 
-console.log("holy moly");
+const mapMe = () => {
+  if (!signer) {
+    alert("Please connect your wallet");
+    return;
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  }
+};
